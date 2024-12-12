@@ -1,7 +1,25 @@
-//Q.9: Given a list of integers, write a dart code that returns the maximum value from the list.
+//Q: remove all false values from below list by using removeWhere or
+// retainWhere property.
+// List<Map<String, bool>> usersEligibility = [
+// {'name': 'John', 'eligible': true},
+// {'name': 'Alice', 'eligible': false},
+// {'name': 'Mike', 'eligible': true},
+// {'name': 'Sarah', 'eligible': true},
+// {'name': 'Tom', 'eligible': false},
+// ];
+
 
 void main() {
-  List<int> number = [2, 4, 7, 9, 14, 17, 11, 25, 1, 80];
-  number.sort();
-  print(number.last);
+  List<Map<String, dynamic>> usersEligibility = [
+    {'name': 'John', 'eligible': true},
+    {'name': 'Alice', 'eligible': false},
+    {'name': 'Mike', 'eligible': true},
+    {'name': 'Sarah', 'eligible': true},
+    {'name': 'Tom', 'eligible': false},
+  ];
+
+  
+  usersEligibility.removeWhere((user) => user['eligible'] == false);
+
+  print(usersEligibility);
 }
